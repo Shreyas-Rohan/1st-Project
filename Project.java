@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 public class Project
 {
 static Scanner s=new Scanner(System.in);
@@ -7,9 +8,10 @@ public static void main(String[]args)
 System.out.print("Entering Nexus Vijaya Mall");
 System.out.print("\nWhich place you're going first??");
 for(int i=1;i<=4;i++){
-System.out.println("\n1.FoodCourt");
-System.out.println("2.Shopping_Center");
-System.out.println("3.Over Crowded! Let's Leave");
+System.out.println("\n1.Food Court");
+System.out.println("2.Shopping Center");
+System.out.println("3.Fun City");
+System.out.println("4.Exit");
 String places=s.next();
 switch(places)
 {
@@ -20,6 +22,9 @@ case "2":
 Shopping_Center();
 break;
 case "3":
+Fun_city();
+break;
+case "4":
 System.out.print("Over Crowded! Let's Leave");
 System.exit(0);
 break;
@@ -215,5 +220,100 @@ if(l.equalsIgnoreCase("Chair")){
 System.out.println("Chair is packed");
 }
 }
+public static void Fun_city()
+{
+System.out.print("\nDo you have a Play card[Y/N]? ");
+String ps=s.next();
+while(true){
+if(ps.equalsIgnoreCase("Y"))
+{
+System.out.print("\nEnter your play points ");
+int pp=s.nextInt();
 }
-
+else if(ps.equalsIgnoreCase("N")){
+System.out.print("\nDo you want to buy a new one???[Y/N] ");
+String f=s.next();
+if(f.equalsIgnoreCase("Y")){
+System.out.print("\nNew card costs 100 with 100 playpoints.Do you want to buy it?[Y/N] ");
+String g=s.next();
+if(g.equalsIgnoreCase("Y")){
+System.out.print("\nEnter amount[100]: ");
+int er=s.nextInt();
+System.out.print("Here is your card");
+}else{
+return;
+}
+}else{
+System.out.print("\nSorry,no games cannot be played without this card");
+return;
+}
+}else{
+return;
+}
+System.out.print("\nDo you want to add playpoints??[Y/N] ");
+String add=s.next();
+if(add.equalsIgnoreCase("Y"))
+{
+System.out.print("\nEnter the amount to get points: ");
+int io=s.nextInt();
+System.out.print("\nEntering Game Space");
+}
+else if(add.equalsIgnoreCase("N"))
+{
+System.out.print("\nOkay");
+System.out.print("\nEntering Game Space");
+}
+else{
+System.out.print("\nEnter valid Answer");
+}
+for(int i=1;i<=5;i++)
+{
+System.out.print("\n1.Shooting Stars \n2.Lottery \n3.Scary House[Under Development] \n4.Toy Picker[Under Development] \n5.Let's Leave");
+System.out.print("\nEnter an option:");
+int nb=s.nextInt();
+switch(nb){
+case 1:
+Shooting_Stars();
+break;
+case 2:
+Lottery();
+break;
+case 5:
+System.out.print("\nLeave!");
+return;
+default:
+System.out.print("\nEnter valid option");
+}
+}
+}
+}
+public static void Shooting_Stars() 
+{
+System.out.println("\nEnter your stars[MAX:70]:");
+int stars=s.nextInt();
+for(int i=1;i<=stars;i++){
+for(int j=1;j<=stars-i;j++){
+System.out.print("");
+}
+ for (int k = 1; k <= 2 * i - 1; k++){
+System.out.print("*");
+}
+System.out.println();
+}
+}
+public static void Lottery()
+{
+Random r=new Random();
+{
+String[] qo={"Oops,Better luck next time","Not your Day Champ","Hard Luck :)","Congratulations you are the Lucky one!!!!! \nToday's luck is in your hands","Don't lose your hope.\nLuck is not in your hands","Bad luck","You Won! But the cash is 0","Next time Foe","Nope,Sorry Comeback later","You did not catch it up"};
+System.out.println("\nEnter your number[1-10] :");
+int luck=s.nextInt();
+if(luck>=1 && luck<=10){
+int quite=r.nextInt(qo.length);
+System.out.print(qo[quite]);
+}else{
+System.out.println("Enter valid number!!!");
+}
+}
+}
+}
