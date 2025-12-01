@@ -72,7 +72,7 @@ System.out.println("Chicken Burger with Salsa Dip and Pepsi will arrive in 20 mi
 if(y.equalsIgnoreCase("Egg Burger")){
 System.out.println("Egg Burger with Fries and ketchup will arrive in 25 minutes");}
 if(y.equalsIgnoreCase("Mexican Burger")){
-System.out.println("Mexican Burger with Mexican sauce and Thumbs_up will arrive in 25 minutes");}
+System.out.println("Mexican Burger with Mexican sauce and Thumbs_up will arrive in 25 minutes");}}
 public static void Taco_Bell(){
 System.out.println("\n1.American Chilli_Taco \n2.Burrito \n3.Veg_Taco \n4.NonVeg_Taco");
 System.out.println("What's Your order?");
